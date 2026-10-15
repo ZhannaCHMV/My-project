@@ -27,17 +27,15 @@ export function Post() {
       <Link to='/'>← Back to recipes</Link>
       <hr />
       <h1>{post.title}</h1>
-      {post.imageURL && (
+      <h3>Ingredients:</h3>
+      <p style={{ whiteSpace: 'pre-line' }}>{post.ingredientList}</p>
+      {post.image && (
         <img
-          src={post.imageURL}
+          src={post.image}
           alt={post.title}
           style={{ maxWidth: '100%', maxHeight: 400, objectFit: 'cover' }}
         />
       )}
-      <h3>Ingredients:</h3>
-      <p style={{ whiteSpace: 'pre-line' }}>{post.ingredients}</p>
-      <h3>Instructions:</h3>
-      <p style={{ whiteSpace: 'pre-line' }}>{post.contents}</p>
     </div>
   )
 }
